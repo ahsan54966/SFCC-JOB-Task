@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="ProductImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="SiteGenesis"/>
+            <step step-id="Generate Product XML" type="ExecuteScriptModule" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">app_storefront_core/cartridge/scripts/catalog/GenerateProductXML.js</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">GenerateProductXML</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                    <parameter name="filePath">/src/export/products/</parameter>
+                    <parameter name="fileName">product-catalog.xml</parameter>
+                    <parameter name="brand">Pioneer</parameter>
+                    <parameter name="categoryID">test</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2020-08-02Z</date>
+                <time>12:07:16.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+</jobs>
